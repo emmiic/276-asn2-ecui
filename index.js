@@ -8,6 +8,9 @@ var pool;
 pool = new Pool({
   // connectionString: 'postgres://postgres:1433@localhost/users'
   connectionString: process.env.DATABASE_URL
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 var app = express()
