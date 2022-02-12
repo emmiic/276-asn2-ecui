@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Display Edit Rectangle</title>
+        <link rel="stylesheet" href="/public/stylesheets/editrectangle.css">
+    </head>
+    <body>
+        
+        <div id="bg2">
+            <h1 id="h1">CURRENT RECTANGLE</h1>
+
+            <div id="main-body">
+                <div class="main">
+                    <% rows.forEach(function(r) { %>
+                        <svg width="400" height="400">
+                            <rect id ="rshape" width="<%=r.width%>" height="<%=r.height%>" style= "fill:<%=r.color%>"/>
+                        </svg>
+                    
+                    <div class ="c1">
+                        <h2 id = "rtext"><%= r.rname%></h2>
+                    </div>
+                    <% }); %>
+                </div>
+                <div id="chkbox">
+                    <label id="label1" for="darkmode"> 
+                        <input type="checkbox" id="darkmode"/>&nbsp;Lights off!
+                    </label> 
+                </div>
+            </div>
+
+            <main id="bg3">
+                <p id="title">Display or Edit the Current Rectangle . . . </p>
+                <p id="descrip">Please edit attributes below</p>
+                
+                <br>
+                
+                    <table id="newtbl">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Width</th>
+                            <th>Height</th>
+                            <th>Color</th>
+                            <th>Opacity</th>
+                        </tr>
+                        <% rows.forEach(function(r) { %>
+                        <form id="addform" action="/update/<%=r.rid%>" method="post">
+                        
+                        <tr>
+                            <td>
+                                <%= r.rid%>
+                            </td>
+                            <td>
+                                <input id="newrname" type="text" name="newrname" value="<%= r.rname%>">
+                            </td>
+                            <td>
+                                <input id="newwd" type="number" name="newwd" value="<%=r.width%>">
+                            </td>
+                            <td>
+                                <input id="newht" type="number" name="newht" value="<%=r.height%>">
+                            </td>
+                            <td>
+                                <input id="newclr" type="color" name="newclr" value="<%=r.color%>">
+                            </td>
+                            <td>
+                                <input id="newop" type="number" name="newop" value="">
+                            </td>
+                        </tr>
+                        
+                        <% }); %>
+                    </table>
+                    <br>
+                    
+                    <input id="update" type="submit" value="SUBMIT UPDATE">
+                </form>
+                <form id="bkform" action="/back" method="post">
+                    <input id="back" type="submit" value="BACK">
+                </form>
+                <br><br>
+            
+            </main>
+        <br>
+        </div>
+        <script type="text/javascript" src="/public/display.js">
+        </script>
+    </body>
+</html>

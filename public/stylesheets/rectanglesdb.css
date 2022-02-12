@@ -1,0 +1,141 @@
+body {
+    background: #708090;
+    margin-top:0;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#bg2 {
+    background: #e0ebeb;
+    border: 5px solid #032d30;
+    box-shadow: 0px 0px 15px 2px #afeff0, 0px 0px 8px 2px #032d30 inset;
+    padding: 0;
+}
+
+#h1{
+    text-align: center;
+    color: #ffffff;
+    background: #032d30;
+    box-shadow: 0px 0px 8px 2px #032d30;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-shadow:
+        0 0 1px #fff,
+        0 0 2px #fff,
+        0 0 3px #fff,
+        0 0 5px rgb(1, 59, 60),
+        0 0 8px rgb(3, 119, 128),
+        0 0 12px rgb(0, 255, 238),
+        0 0 17px rgb(150, 236, 255),
+        0 0 20px rgb(201, 255, 255);
+}
+
+#bg3 {
+    background-color: #639c9c;
+    box-shadow: 0px 0px 15px 2px #032d30;
+    font-family: 'Century Gothic';
+    border: 1px solid #DCE7EC;
+    border-radius: 3px;
+    padding: 14px 10px 14px 10px;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+}
+
+#title {
+    color: #B0E0E6;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#descrip {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #032d30;
+}
+
+
+
+th {
+    text-align: center;
+    background-color: #e0ebeb;
+    height: 1.4em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+table {
+    width: 100%;
+}
+
+.rn {
+    width: 40%;
+}
+
+.rid {
+    text-align: center;
+}
+
+table,th, td{
+    color: #032d30;
+    padding-top: 5px;
+    padding-left: 6px; 
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: rgb(5, 126, 128);
+    font-weight: bold;
+    
+}
+
+td {
+    background-color: #b1cdcd;
+    width: 10%;
+    height: 2.5em;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+input {
+    position: relative;
+    width: 60px;
+    height: 1.9em;
+}
+
+#add {
+    color: #e0ebeb;
+    width: 10em;
+    border-radius: 3px;
+    background-color: #032d30;
+    border: 0px;
+    height: 2.2em;
+    font-size: 0.9em;
+}
+
+
+.thisrect {
+    color: #032d30;
+    border-radius: 3px;
+    background-color: #639c9c;
+    border: 0px;
+    height: 2.2em;
+    width: auto;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.2em;
+}
+
+#delete {
+    width: 5em;
+    color: #e0ebeb;
+    border-radius: 3px;
+    background-color: #032d30;
+    border: 0px;
+    height: 2.2em;
+    font-size: 0.9em;
+}

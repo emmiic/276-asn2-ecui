@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>New Rectangle</title>
+        <link rel="stylesheet" href="./stylesheets/rectangle.css">
+        
+    </head>
+    <body>
+        
+        <div id="bg2">
+            <h1 id="h1">NEW RECTANGLE</h1>
+
+            <div id="main-body">
+                
+                <div class="main">
+                    
+                    <svg width="400" height="400">
+                        <rect id ="rshape" width="400" height="400" style= "fill: #20B2AA"/>
+                    </svg>
+                    
+                    <div class ="c1">
+                        <h2 id = "rtext">SAMPLE</h2>
+                    </div>
+
+                </div>
+                <div id="chkbox">
+                    <label id="label1" for="darkmode"> 
+                        <input type="checkbox" id="darkmode"/>&nbsp;Lights off!
+                    </label> 
+                </div>
+                
+            </div>
+
+            <main id="bg3">
+                <p id="title">Adding New Rectangle . . . </p>
+                <p id="descrip">Enter attributes below</p>
+                <br>
+                <form id="addform" action="/addnew" method="post">
+                    <table id="newtbl">
+                        <tr>
+                            <th>Name</th>
+                            <th>Width</th>
+                            <th>Height</th>
+                            <th>Color</th>
+                            <th>Opacity</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="newrname" type="text" name="newrname" value="SAMPLE">
+                            </td>
+                            <td>
+                                <input id="newwd" type="number" name="newwd" value="400">
+                            </td>
+                            <td>
+                                <input id="newht" type="number" name="newht" value="400">
+                            </td>
+                            <td>
+                                <input id="newclr" type="color" name="newclr" value="#20B2AA">
+                            </td>
+                            <td>
+                                <input id="newop" type="number" name="newop" value="">
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <input id="add" type="submit" value="ADD">
+                </form>
+                <form id="bkform" action="/back" method="post">
+                    <input id="back" type="submit" value="BACK">
+                </form>
+                <br><br>
+            </main>
+        <br>
+        </div>
+        <script type="text/javascript" src="./rectangle.js">
+        </script>
+    </body>
+</html>

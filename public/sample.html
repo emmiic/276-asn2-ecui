@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+<title>Insert Record</title>
+
+</head>
+
+<body>
+
+  <b>Add Record</b></font>
+
+  <p><font size="2" face="Arial, Helvetica, sans-serif">
+
+  <form action="" method="POST" enablecab="Yes" border="">
+
+    Id:<input type="Text" name="id" align="LEFT" required="Yes" 
+
+    size="10" value=""><br><br>
+
+    Name :<input type="Text" name="fname" align="LEFT" required="Yes" 
+
+    size="59" value=""><br><br>
+
+    <input type="button" id="add" name="add" value="Add" align="MIDDLE"><br><br>
+
+  </form>
+
+  
+
+  <script type="text/javascript">
+
+    const {Pool, Client} = require('pg')
+
+    
+
+    const client = new Client({
+
+    user: "postgres",
+
+    host: "localhost",
+
+    database: "testdb",
+
+    password: "pg22020>>",
+
+    port: 5432
+
+    })
+
+    client.connect()
+
+    var idd=$("#id").int();
+
+    var nname=$("#fname").val()
+
+    client.query("Insert into company (id,name,) VALUES ('"idd+"','"+fname+"',')",function(err, result));
+
+    </script>
+
+    </body>
+
+    </html>

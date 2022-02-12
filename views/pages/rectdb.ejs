@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rectangles Database</title>
+    <link rel="stylesheet" href="./stylesheets/rectanglesdb.css">
+    
+  </head>
+  <body>
+    <div id="bg2">
+      <h1 id="h1">RECTANGLES DATABASE</h1>
+      <main id="bg3">
+        <p id="title">All Rectangles</p>
+        <p id="descrip"> Click on the name of the rectangle you wish to display or edit</p>
+        <br>
+        <table id="mytbl">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Delete</th>
+          </tr>
+
+          <% rows.forEach(function(r) { %>
+            <tr>             
+              <td class="rid">
+                <%= r.rid%>
+              </td>
+              <td class="rn">
+                <form action="/displayedit/<%=r.rid%>" method="post">
+                  <input class="thisrect" type="submit" value="<%= r.rname%>">
+                </form>
+              </td>
+              <td>
+                <input type="color" name="clr" value="<%=r.color%>">
+              </td>
+              
+              <td class="del">
+                <form id="delform" action="/delete/<%=r.rid%>" method="post">
+                  <input id="delete" type="submit" value="DELETE">
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+          
+
+        </table>
+        <br>
+        <form id="addform" action="/newrect" method="post">
+          <input id="add" type="submit" value="ADD RECTANGLE"><br> 
+        </form> 
+   
+      </main>
+      <br>
+    </div>    
+  </body>
+
+
+</html>

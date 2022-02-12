@@ -115,12 +115,3 @@ for (let i = 0; i <rows; i++) {
         gd[i].addEventListener('change', (evt) => percent(i));
     }());
 }
-
-// gn[1].addEventListener('change', (evt) => percent(1));
-// gd[1].addEventListener('change', (evt) => percent(1));
-// gn[2].addEventListener('change', (evt) => percent(2));
-// gd[2].addEventListener('change', (evt) => percent(2));
-// gn[3].addEventListener('change', (evt) => percent(3));
-// gd[3].addEventListener('change', (evt) => percent(3));
-
-
