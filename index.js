@@ -48,8 +48,12 @@ app.post('/addnew', async (req, res) => {
   var wdnew = req.body.newwd;
   var htnew = req.body.newht;
   var clrnew = req.body.newclr;
+  var fclrnew = req.body.newfclr;
+  var crnew = req.body.newcr;
+  var bclrnew = req.body.newbclr;
+  var opnew = req.body.newop;
   try {
-    const result = await pool.query(`INSERT INTO rectangles (rid, rname, width, height, color) VALUES (DEFAULT, '${rnamenew}', ${wdnew}, ${htnew}, '${clrnew}')`);
+    const result = await pool.query(`INSERT INTO rectangles (rid, rname, width, height, color, fcolor, cradius, bcolor, opacity) VALUES (DEFAULT, '${rnamenew}', ${wdnew}, ${htnew}, '${clrnew}', '${fclrnew}', ${crnew}, '${bclrnew}',${opnew})`);
     res.redirect('/rectangles');
   } catch {
     res.send(error);
@@ -76,9 +80,13 @@ app.post('/update/:id', async (req, res) =>{
   var nupdate = req.body.newrname;
   var wdupdate = req.body.newwd;
   var htupdate = req.body.newht;
-  var clrupdate = req.body.newclr;
+  var clr = req.body.newclr;
+  var fclr= req.body.newfclr;
+  var crupdate = req.body.newcr;
+  var bclr = req.body.newbclr;
+  var opupdate = req.body.newop;
   try {
-    const result = await pool.query(`UPDATE rectangles SET rname='${nupdate}', width=${wdupdate}, height=${htupdate}, color='${clrupdate}' WHERE rid=${updateid}`);
+    const result = await pool.query(`UPDATE rectangles SET rname='${nupdate}', width=${wdupdate}, height=${htupdate}, color='${clr}', cradius=${crupdate}, fcolor='${fclr}', bcolor='${bclr}', opacity=${opupdate} WHERE rid=${updateid}`);
     res.redirect('/rectangles');
   }
   catch (error) {

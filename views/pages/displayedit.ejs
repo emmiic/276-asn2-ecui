@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Display Edit Rectangle</title>
-        <link rel="stylesheet" href="/public/stylesheets/editrectangle.css">
+        <link rel="stylesheet" href="/public/stylesheets/displayedit.css">
     </head>
     <body>
         
@@ -13,12 +13,12 @@
             <div id="main-body">
                 <div class="main">
                     <% rows.forEach(function(r) { %>
-                        <svg width="400" height="400">
-                            <rect id ="rshape" width="<%=r.width%>" height="<%=r.height%>" style= "fill:<%=r.color%>"/>
+                        <svg width="420" height="420">
+                            <rect id ="rshape" x="10" y="10" width="<%=r.width%>" height="<%=r.height%>" style= "fill:<%=r.color%>;stroke:<%=r.bcolor%>;stroke-width:10;opacity:<%=r.opacity%>" rx="<%=r.cradius%>"/>
                         </svg>
                     
                     <div class ="c1">
-                        <h2 id = "rtext"><%= r.rname%></h2>
+                        <h2 id = "rtext" style="color:<%=r.fcolor%>"><%= r.rname%></h2>
                     </div>
                     <% }); %>
                 </div>
@@ -39,41 +39,53 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Font Color</th>
                             <th>Width</th>
                             <th>Height</th>
                             <th>Color</th>
+                            <th>Border Color</th>
+                            <th>Corner Radius</th>
                             <th>Opacity</th>
                         </tr>
                         <% rows.forEach(function(r) { %>
                         <form id="addform" action="/update/<%=r.rid%>" method="post">
                         
-                        <tr>
-                            <td>
-                                <%= r.rid%>
-                            </td>
-                            <td>
-                                <input id="newrname" type="text" name="newrname" value="<%= r.rname%>">
-                            </td>
-                            <td>
-                                <input id="newwd" type="number" name="newwd" value="<%=r.width%>">
-                            </td>
-                            <td>
-                                <input id="newht" type="number" name="newht" value="<%=r.height%>">
-                            </td>
-                            <td>
-                                <input id="newclr" type="color" name="newclr" value="<%=r.color%>">
-                            </td>
-                            <td>
-                                <input id="newop" type="number" name="newop" value="">
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <%= r.rid%>
+                                </td>
+                                <td>
+                                    <input id="newrname" type="text" name="newrname" value="<%= r.rname%>">
+                                </td>
+                                <td>
+                                    <input id="newfclr" type="color" name="newfclr" value="<%=r.fcolor%>">
+                                </td>
+                                <td>
+                                    <input id="newwd" type="number" min="11" step="1" max="400" name="newwd" value="<%=r.width%>">
+                                </td>
+                                <td>
+                                    <input id="newht" type="number" min="11" step="1" max="400" name="newht" value="<%=r.height%>">
+                                </td>
+                                <td>
+                                    <input id="newclr" type="color" name="newclr" value="<%=r.color%>">
+                                </td>
+                                <td>
+                                    <input id="newbclr" type="color" name="newbclr" value="<%=r.bcolor%>">
+                                </td>
+                                <td>
+                                    <input id="newcr" type="number" min="0" step="1" max="100" name="newcr" value="<%=r.cradius%>">
+                                </td>
+                                <td>
+                                    <input id="newop" type="number" min="0" step="0.1" max="1" name="newop" value="<%=r.opacity%>">
+                                </td>
+                            </tr>
                         
                         <% }); %>
                     </table>
                     <br>
                     
                     <input id="update" type="submit" value="SUBMIT UPDATE">
-                </form>
+                    </form>
                 <form id="bkform" action="/back" method="post">
                     <input id="back" type="submit" value="BACK">
                 </form>
