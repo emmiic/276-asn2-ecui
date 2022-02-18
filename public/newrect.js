@@ -6,6 +6,7 @@ var newc = document.getElementById('newclr')
 var newbc = document.getElementById('newbclr')
 var newcr = document.getElementById('newcr')
 var newop = document.getElementById('newop')
+const vararr = [newn, newfc, neww, newh, newc, newbc, newcr, newop];
 
 var updatetxt = document.getElementById('rtext')
 var darkmode = document.getElementById('darkmode');
@@ -23,9 +24,16 @@ function updatedisplay() {
     rshape.style.opacity = newop.value;
 }
 
+function validateForm() {
+    for (var i = 0; i <vararr.length; i++) {
+        if (vararr[i].value == "") {
+            alert("Input(s) cannot be empty!");
+            return false;
+        }
+    }    
+}
 
 // event listeners for input changes
-
 neww.addEventListener('change', updatedisplay);
 newh.addEventListener('change', updatedisplay);
 newn.addEventListener('change', updatedisplay);

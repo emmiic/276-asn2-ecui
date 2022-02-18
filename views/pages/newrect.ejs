@@ -36,7 +36,7 @@
                 <p id="title">Adding New Rectangle . . . </p>
                 <p id="descrip">Enter attributes below</p>
                 <br>
-                <form id="addform" action="/addnew" method="post">
+                <form id="addform" action="/addnew" method="post" onsubmit="return validateForm()" method="post" required>
                     <table id="newtbl">
                         <tr>
                             <th>Name</th>
@@ -56,10 +56,10 @@
                                 <input id="newfclr" type="color" name="newfclr" value="#4682B4">
                             </td>
                             <td>
-                                <input id="newwd" type="number" min="11" step="1" max="400" name="newwd" value="400">
+                                <input id="newwd" type="number" min="11" step="1" max="400" name="newwd" value="400" oninput="this.value =!!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                             </td>
                             <td>
-                                <input id="newht" type="number" min="11" step="1" max="400" name="newht" value="350">
+                                <input id="newht" type="number" min="11" step="1" max="400" name="newht" value="350" oninput="this.value =!!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                             </td>
                             <td>
                                 <input id="newclr" type="color" name="newclr" value="#20B2AA">
@@ -68,10 +68,10 @@
                                 <input id="newbclr" type="color" name="newbclr" value="#B0E0E6">
                             </td>
                             <td>
-                                <input id="newcr" type="number" min="0" step="1" max="100" name="newcr" value="20">
+                                <input id="newcr" type="number" min="0" step="1" max="100" name="newcr" value="20" oninput="this.value =!!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                             </td>
                             <td>
-                                <input id="newop" type="number" min="0" step="0.1" max="1" name="newop" value="0.6">
+                                <input id="newop" type="number" min="0" step="0.1" max="1" name="newop" value="0.6" oninput="this.value =!!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                             </td>
                         </tr>
 
